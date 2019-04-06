@@ -26,7 +26,7 @@ def read_file(filename):
 	return output
 
 #Read config file
-config = json.loads( read_file(config.json) )
+config = json.loads( read_file('config.json') )
 
 #Whitelist
 whitelisted_senders = []
@@ -114,7 +114,7 @@ for i in range(len(id_list)):
 
 	regex = config["regex_filter"]
 
-	if (re.search(regex, from_data[1]) != None or "undergraduate" in from_data[1] or "undergraduate" in from_data[0] or "admission" in from_data[1] or "admission" in from_data[0]) and not (from_data[1] in whitelisted_emails):
+	if re.search(regex, from_data[1]) != None and not (from_data[1] in whitelisted_emails):
 		#The email matches the regex, so we'll delete it
 		print(bcolors.OKBLUE + "Deleting email from " + from_data[1] + bcolors.ENDC)
 
