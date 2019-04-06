@@ -9,9 +9,11 @@ git (optional)
 
 ## Config
 Start by defining parameters in the `config.json`file. The options for this file are described below:
-`"whitelisted_senders":{
+```
+"whitelisted_senders":{
 
-}`
+}
+```
 
 The `whitelisted_senders` object defines a list of senders whose emails to you should never be deleted by the program.
 Add them by giving them an index and an email address, as a key/value pair: `"0": "example@example.com"`
