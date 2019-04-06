@@ -1,0 +1,13 @@
+{
+	"whitelisted_senders":{
+
+	},
+	"credentials":{
+		"email":"your_email",
+		"password":"your_password"
+	},
+	"imap_server": "imap.gmail.com",
+	"mailbox": "[Gmail]/All Mail",
+	"regex_filter": ""
+
+}
