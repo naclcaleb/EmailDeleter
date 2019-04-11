@@ -42,7 +42,8 @@ The mailbox that the program should search. Defaults to `inbox`.
 "regex_filter": "regex"
 ```
 
-The regex used to match sender addresses.
+The regex used to match sender addresses. __NOTE__: All backslashes in the regex need to be escaped with another backslash, even if you're already using many backslashes. For example, this regex: `test\\regex` would become `test\\\\regex`.
+Unfortunately, this does make regexes more complicated, but is necessary for the JSON parsing.
 
 
 ## Running
