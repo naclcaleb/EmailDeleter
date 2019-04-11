@@ -114,7 +114,7 @@ for i in range(len(id_list)):
 
 	regex = config["regex_filter"]
 
-	if re.search(regex, from_data[1]) != None and not (from_data[1] in whitelisted_emails):
+	if re.search(regex, from_data[1]) != None and not (from_data[1] in whitelisted_senders):
 		#The email matches the regex, so we'll delete it
 		print(bcolors.OKBLUE + "Deleting email from " + from_data[1] + bcolors.ENDC)
 
@@ -142,8 +142,8 @@ if 'y' in imsure:
 		Mailbox.store(latest, '+X-GM-LABELS', '\\Trash')
 
 	Mailbox.expunge()
-	Mail.close()
-	Mail.logout()
+	Mailbox.close()
+	Mailbox.logout()
 
 	print(bcolors.OKGREEN + "Successfully moved emails to trash." + bcolors.ENDC)
 else:
